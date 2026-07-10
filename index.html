@@ -20,9 +20,14 @@
        <img src="ruta-de-tu-foto.jpg" alt="Nombre del producto">
      Sube tus fotos a la misma carpeta que este archivo.
 
-  3. Nombres, precios, categoría (Bolso/Morral/Accesorio) y
-     descripciones: edita el texto dentro de cada
-     <article class="card"> en la sección "products".
+  3. Nombres, precios, descripciones y categorías: edita el texto
+     dentro de cada <article class="card"> en la sección "products".
+     El atributo data-cats controla en qué filtros aparece cada
+     producto (puedes poner varias categorías separadas por espacio):
+       mujeres, hombres, jovenes, bolsos, morrales, maletas, accesorios
+     Si agregas una categoría nueva, agrégala también como botón
+     dentro de <div class="filter-row"> con el mismo texto en
+     data-filter (en minúsculas y sin tildes).
 
   4. Logo: usa valmont-icon.png (encabezado) y
      valmont-logo-full.png (hero y pie de página). Súbelos a la
@@ -287,6 +292,45 @@
     text-transform:none;
     letter-spacing:0.01em;
   }
+
+  /* ---------- category filters ---------- */
+  .filter-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:40px;
+  }
+  .filter-pill{
+    background:transparent;
+    color:var(--muted);
+    border:1px solid var(--line);
+    padding:9px 18px;
+    border-radius:999px;
+    font-family:'Jost', sans-serif;
+    font-size:0.74rem;
+    font-weight:500;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:all 0.2s ease;
+  }
+  .filter-pill:hover{ border-color:var(--gold-dim); color:var(--ivory); }
+  .filter-pill.active{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:#141004;
+  }
+  .card.hide{ display:none; }
+  .empty-state{
+    color:var(--muted);
+    font-size:0.9rem;
+    text-transform:none;
+    letter-spacing:0.01em;
+    padding:40px 0;
+    text-align:center;
+    display:none;
+  }
+  .empty-state.show{ display:block; }
 
   /* ---------- products ---------- */
   .grid{
@@ -560,13 +604,26 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Nuestro catálogo</h2>
-      <p>Bolsos, morrales y accesorios disponibles por unidad o al por mayor. Toca "pedir" para confirmar color, cantidad y precio.</p>
+      <p>Bolsos, morrales, maletas y accesorios disponibles por unidad o al por mayor. Filtra por categoría o toca "pedir" para confirmar color, cantidad y precio.</p>
+    </div>
+
+    <div class="filter-row" id="filterRow">
+      <button class="filter-pill active" data-filter="todos">Todos</button>
+      <button class="filter-pill" data-filter="mujeres">Mujeres</button>
+      <button class="filter-pill" data-filter="hombres">Hombres</button>
+      <button class="filter-pill" data-filter="jovenes">Jóvenes</button>
+      <button class="filter-pill" data-filter="bolsos">Bolsos</button>
+      <button class="filter-pill" data-filter="morrales">Morrales</button>
+      <button class="filter-pill" data-filter="maletas">Maletas</button>
+      <button class="filter-pill" data-filter="accesorios">Accesorios</button>
     </div>
 
     <div class="grid" id="productGrid">
-      <!-- Cada <article class="card"> es un producto. Copia y pega el bloque para agregar más. -->
+      <!-- Cada <article class="card"> es un producto. data-cats acepta varias categorías
+           separadas por espacio: mujeres, hombres, jovenes, bolsos, morrales, maletas, accesorios.
+           Copia y pega el bloque para agregar más. -->
 
-      <article class="card" data-name="Bolso Milán" data-price="$189.000">
+      <article class="card" data-name="Bolso Milán" data-price="$189.000" data-cats="mujeres bolsos">
         <div class="card-media">
           <span class="cat-chip">Bolso</span>
           <div class="ph-art">
@@ -581,7 +638,7 @@
         </div>
       </article>
 
-      <article class="card" data-name="Morral Explorer" data-price="$155.000">
+      <article class="card" data-name="Morral Explorer" data-price="$155.000" data-cats="jovenes hombres morrales">
         <div class="card-media">
           <span class="cat-chip">Morral</span>
           <div class="ph-art">
@@ -596,7 +653,7 @@
         </div>
       </article>
 
-      <article class="card" data-name="Bolso Valentina" data-price="$220.000">
+      <article class="card" data-name="Bolso Valentina" data-price="$220.000" data-cats="mujeres bolsos">
         <div class="card-media">
           <span class="cat-chip">Bolso</span>
           <div class="ph-art">
@@ -611,7 +668,7 @@
         </div>
       </article>
 
-      <article class="card" data-name="Billetera Bronce" data-price="$65.000">
+      <article class="card" data-name="Billetera Bronce" data-price="$65.000" data-cats="hombres accesorios">
         <div class="card-media">
           <span class="cat-chip">Accesorio</span>
           <div class="ph-art">
@@ -626,7 +683,7 @@
         </div>
       </article>
 
-      <article class="card" data-name="Morral Urbano" data-price="$175.000">
+      <article class="card" data-name="Morral Urbano" data-price="$175.000" data-cats="jovenes morrales">
         <div class="card-media">
           <span class="cat-chip">Morral</span>
           <div class="ph-art">
@@ -641,7 +698,7 @@
         </div>
       </article>
 
-      <article class="card" data-name="Cinturón Clásico" data-price="$45.000">
+      <article class="card" data-name="Cinturón Clásico" data-price="$45.000" data-cats="hombres accesorios">
         <div class="card-media">
           <span class="cat-chip">Accesorio</span>
           <div class="ph-art">
@@ -656,7 +713,99 @@
         </div>
       </article>
 
+      <article class="card" data-name="Maleta de Viaje Grande" data-price="$310.000" data-cats="maletas hombres mujeres">
+        <div class="card-media">
+          <span class="cat-chip">Maleta</span>
+          <div class="ph-art">
+            <svg viewBox="0 0 100 100" fill="none"><rect x="20" y="24" width="60" height="58" rx="8" fill="#c9a24a" opacity=".2"/><rect x="38" y="14" width="24" height="12" rx="4" stroke="#c9a24a" stroke-width="3"/><path d="M20 50H80" stroke="#c9a24a" stroke-width="2"/></svg>
+          </div>
+          <span class="price-tag">$310.000</span>
+        </div>
+        <div class="card-body">
+          <h3>Maleta de Viaje Grande</h3>
+          <p>Maleta rígida con ruedas giratorias y candado, ideal para viajes largos.</p>
+          <a class="card-cta product-whatsapp" href="#">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-name="Maleta de Cabina" data-price="$240.000" data-cats="maletas jovenes">
+        <div class="card-media">
+          <span class="cat-chip">Maleta</span>
+          <div class="ph-art">
+            <svg viewBox="0 0 100 100" fill="none"><rect x="26" y="28" width="48" height="52" rx="8" fill="#c9a24a" opacity=".2"/><rect x="40" y="18" width="20" height="10" rx="4" stroke="#c9a24a" stroke-width="3"/><path d="M26 50H74" stroke="#c9a24a" stroke-width="2"/></svg>
+          </div>
+          <span class="price-tag">$240.000</span>
+        </div>
+        <div class="card-body">
+          <h3>Maleta de Cabina</h3>
+          <p>Tamaño permitido en cabina, liviana y resistente, perfecta para vuelos cortos.</p>
+          <a class="card-cta product-whatsapp" href="#">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-name="Maletín Ejecutivo" data-price="$195.000" data-cats="hombres maletas accesorios">
+        <div class="card-media">
+          <span class="cat-chip">Maleta</span>
+          <div class="ph-art">
+            <svg viewBox="0 0 100 100" fill="none"><rect x="20" y="36" width="60" height="40" rx="6" fill="#c9a24a" opacity=".2"/><path d="M42 36V28C42 24 45 22 50 22C55 22 58 24 58 28V36" stroke="#c9a24a" stroke-width="3"/></svg>
+          </div>
+          <span class="price-tag">$195.000</span>
+        </div>
+        <div class="card-body">
+          <h3>Maletín Ejecutivo</h3>
+          <p>Maletín porta-portátil en cuero, con compartimentos organizadores.</p>
+          <a class="card-cta product-whatsapp" href="#">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-name="Morral Mujer Aurora" data-price="$165.000" data-cats="mujeres morrales">
+        <div class="card-media">
+          <span class="cat-chip">Morral</span>
+          <div class="ph-art">
+            <svg viewBox="0 0 100 100" fill="none"><rect x="28" y="28" width="44" height="54" rx="12" fill="#c9a24a" opacity=".2"/><rect x="38" y="16" width="24" height="16" rx="6" stroke="#c9a24a" stroke-width="3"/></svg>
+          </div>
+          <span class="price-tag">$165.000</span>
+        </div>
+        <div class="card-body">
+          <h3>Morral Mujer Aurora</h3>
+          <p>Morral compacto con diseño femenino, correas acolchadas y bolsillo frontal.</p>
+          <a class="card-cta product-whatsapp" href="#">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-name="Bolso Cruzado Juvenil" data-price="$98.000" data-cats="jovenes mujeres bolsos">
+        <div class="card-media">
+          <span class="cat-chip">Bolso</span>
+          <div class="ph-art">
+            <svg viewBox="0 0 100 100" fill="none"><rect x="30" y="38" width="40" height="34" rx="8" fill="#c9a24a" opacity=".2"/><path d="M34 38C34 30 40 24 50 24C60 24 66 30 66 38" stroke="#c9a24a" stroke-width="3"/></svg>
+          </div>
+          <span class="price-tag">$98.000</span>
+        </div>
+        <div class="card-body">
+          <h3>Bolso Cruzado Juvenil</h3>
+          <p>Bolso pequeño y colorido, ideal para salir con lo esencial.</p>
+          <a class="card-cta product-whatsapp" href="#">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-name="Riñonera Urbana" data-price="$58.000" data-cats="jovenes hombres accesorios">
+        <div class="card-media">
+          <span class="cat-chip">Accesorio</span>
+          <div class="ph-art">
+            <svg viewBox="0 0 100 100" fill="none"><path d="M20 50C20 40 35 34 50 34C65 34 80 40 80 50C80 60 65 66 50 66C35 66 20 60 20 50Z" fill="#c9a24a" opacity=".2"/><circle cx="50" cy="50" r="6" stroke="#c9a24a" stroke-width="3"/></svg>
+          </div>
+          <span class="price-tag">$58.000</span>
+        </div>
+        <div class="card-body">
+          <h3>Riñonera Urbana</h3>
+          <p>Riñonera ajustable, cómoda para el día a día o para hacer deporte.</p>
+          <a class="card-cta product-whatsapp" href="#">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
     </div>
+
+    <p class="empty-state" id="emptyState">No tenemos productos en esta categoría todavía. Escríbenos por WhatsApp y te contamos qué está por llegar.</p>
 
     <div class="wholesale">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7l9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
@@ -759,6 +908,30 @@
     if(btn){
       btn.href = waLink(`¡Hola! Me interesa el/la ${name} (${price}). ¿Está disponible?`);
     }
+  });
+
+  // Filtro de categorías
+  const filterButtons = document.querySelectorAll('.filter-pill');
+  const cards = document.querySelectorAll('#productGrid .card');
+  const emptyState = document.getElementById('emptyState');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cats = (card.dataset.cats || '').split(' ');
+        const matches = filter === 'todos' || cats.includes(filter);
+        card.classList.toggle('hide', !matches);
+        if(matches) visibleCount++;
+      });
+
+      emptyState.classList.toggle('show', visibleCount === 0);
+    });
   });
 </script>
 
