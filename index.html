@@ -14,8 +14,9 @@
      <script> al final del archivo y cámbialo por el tuyo,
      con indicativo de país y sin el "+" (ej: 573001234567).
 
-  2. Tus fotos de producto: cada bolso tiene un recuadro con un
-     ícono como marcador de posición. Reemplaza el bloque
+  2. Tus fotos de producto: los 4 productos Beresh ya tienen foto real
+     (sin fondo). Para los demás, cada uno tiene un recuadro con un
+     ícono como marcador de posición — reemplaza el bloque
      <div class="ph-art">...</div> por:
        <img src="ruta-de-tu-foto.jpg" alt="Nombre del producto">
      Sube tus fotos a la misma carpeta que este archivo.
@@ -361,6 +362,12 @@
     color:var(--gold-dim);
   }
   .ph-art svg{ width:38%; height:38%; }
+  .card-media img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:20px;
+  }
   .cat-chip{
     position:absolute;
     top:14px;
@@ -622,6 +629,59 @@
       <!-- Cada <article class="card"> es un producto. data-cats acepta varias categorías
            separadas por espacio: mujeres, hombres, jovenes, bolsos, morrales, maletas, accesorios.
            Copia y pega el bloque para agregar más. -->
+
+      <!-- Productos reales Beresh — revisa y ajusta precios/nombres/tallas a los reales -->
+      <article class="card" data-name="Bolso Beresh Tote Crema" data-price="$175.000" data-cats="mujeres bolsos">
+        <div class="card-media">
+          <span class="cat-chip">Bolso</span>
+          <img src="beresh-1-bolso-tote-crema.png" alt="Bolso Beresh tote crema con asa y correa">
+          <span class="price-tag">$175.000</span>
+        </div>
+        <div class="card-body">
+          <h3>Bolso Beresh Tote Crema</h3>
+          <p>Bolso estructurado en color crema, asa superior, herrajes dorados y correa cruzada desmontable.</p>
+          <a class="card-cta product-whatsapp" href="#">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-name="Billetera Beresh Crema" data-price="$85.000" data-cats="mujeres accesorios">
+        <div class="card-media">
+          <span class="cat-chip">Accesorio</span>
+          <img src="beresh-2-billetera-crema.png" alt="Billetera Beresh crema con detalle de corazón">
+          <span class="price-tag">$85.000</span>
+        </div>
+        <div class="card-body">
+          <h3>Billetera Beresh Crema</h3>
+          <p>Billetera tipo sobre en crema y beige, con detalle de corazón dorado y cierre a presión.</p>
+          <a class="card-cta product-whatsapp" href="#">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-name="Bolso Beresh Negro" data-price="$145.000" data-cats="mujeres bolsos">
+        <div class="card-media">
+          <span class="cat-chip">Bolso</span>
+          <img src="beresh-3-bolso-negro.png" alt="Bolso cruzado Beresh negro con cierre dorado">
+          <span class="price-tag">$145.000</span>
+        </div>
+        <div class="card-body">
+          <h3>Bolso Beresh Negro</h3>
+          <p>Bolso cruzado compacto en negro, textura pebble, cierre dorado y bolsillo frontal.</p>
+          <a class="card-cta product-whatsapp" href="#">Pedir por WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="card" data-name="Bolso Beresh Blanco" data-price="$150.000" data-cats="mujeres jovenes bolsos">
+        <div class="card-media">
+          <span class="cat-chip">Bolso</span>
+          <img src="beresh-4-bolso-blanco.png" alt="Bolso cruzado Beresh blanco con correa ancha">
+          <span class="price-tag">$150.000</span>
+        </div>
+        <div class="card-body">
+          <h3>Bolso Beresh Blanco</h3>
+          <p>Bolso cruzado en blanco con correa ancha estampada y bolsillo frontal con cierre.</p>
+          <a class="card-cta product-whatsapp" href="#">Pedir por WhatsApp</a>
+        </div>
+      </article>
 
       <article class="card" data-name="Bolso Milán" data-price="$189.000" data-cats="mujeres bolsos">
         <div class="card-media">
