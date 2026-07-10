@@ -361,12 +361,55 @@
     color:var(--gold-dim);
   }
   .ph-art svg{ width:38%; height:38%; }
+  .photo-slot{ position:relative; height:100%; }
   .card-media img{
     width:100%;
     height:100%;
     object-fit:cover;
     object-position:center;
   }
+  .photo-upload-btn{
+    position:absolute;
+    right:10px;
+    bottom:10px;
+    z-index:5;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:rgba(10,10,10,0.72);
+    color:var(--gold-light);
+    border:1px solid var(--gold-dim);
+    padding:8px 12px;
+    border-radius:999px;
+    font-size:0.68rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    cursor:pointer;
+    backdrop-filter:blur(4px);
+    transition:all 0.2s ease;
+  }
+  .photo-upload-btn:hover{ background:var(--gold); color:#0a0a0a; border-color:var(--gold); }
+  .photo-upload-btn svg{ width:14px; height:14px; flex:none; }
+  .photo-remove-btn{
+    position:absolute;
+    right:10px;
+    top:10px;
+    z-index:5;
+    width:26px;
+    height:26px;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    background:rgba(10,10,10,0.72);
+    color:var(--gold-light);
+    border:1px solid var(--gold-dim);
+    border-radius:999px;
+    cursor:pointer;
+    font-size:0.85rem;
+    line-height:1;
+  }
+  .photo-remove-btn:hover{ background:#c0392b; color:#fff; border-color:#c0392b; }
+  .photo-slot.has-custom .photo-remove-btn{ display:flex; }
   .cat-chip{
     position:absolute;
     top:14px;
@@ -632,7 +675,7 @@
       <article class="card" data-name="Bolso Milán" data-price="$189.000" data-cats="mujeres bolsos">
         <div class="card-media">
           <span class="cat-chip">Bolso</span>
-          <img src="bolso-clutch-negro-beresh.png" alt="Bolso Milán">
+          <div class="photo-slot"><img src="bolso-clutch-negro-beresh.png" alt="Bolso Milán"></div>
           <span class="price-tag">$189.000</span>
         </div>
         <div class="card-body">
@@ -645,7 +688,7 @@
       <article class="card" data-name="Morral Explorer" data-price="$155.000" data-cats="jovenes hombres morrales">
         <div class="card-media">
           <span class="cat-chip">Morral</span>
-          <img src="mochila-negra-beresh.png" alt="Morral Explorer">
+          <div class="photo-slot"><img src="mochila-negra-beresh.png" alt="Morral Explorer"></div>
           <span class="price-tag">$155.000</span>
         </div>
         <div class="card-body">
@@ -658,7 +701,7 @@
       <article class="card" data-name="Bolso Valentina" data-price="$220.000" data-cats="mujeres bolsos">
         <div class="card-media">
           <span class="cat-chip">Bolso</span>
-          <img src="bolso-clutch-celeste-beresh.png" alt="Bolso Valentina">
+          <div class="photo-slot"><img src="bolso-clutch-celeste-beresh.png" alt="Bolso Valentina"></div>
           <span class="price-tag">$220.000</span>
         </div>
         <div class="card-body">
@@ -671,9 +714,9 @@
       <article class="card" data-name="Billetera Bronce" data-price="$65.000" data-cats="hombres accesorios">
         <div class="card-media">
           <span class="cat-chip">Accesorio</span>
-          <div class="ph-art">
+          <div class="photo-slot"><div class="ph-art">
             <svg viewBox="0 0 100 100" fill="none"><rect x="22" y="38" width="56" height="34" rx="6" fill="#c9a24a" opacity=".2"/><path d="M22 50H78" stroke="#c9a24a" stroke-width="2"/></svg>
-          </div>
+          </div></div>
           <span class="price-tag">$65.000</span>
         </div>
         <div class="card-body">
@@ -686,7 +729,7 @@
       <article class="card" data-name="Morral Urbano" data-price="$175.000" data-cats="jovenes morrales">
         <div class="card-media">
           <span class="cat-chip">Morral</span>
-          <img src="mochila-celeste-beresh.png" alt="Morral Urbano">
+          <div class="photo-slot"><img src="mochila-celeste-beresh.png" alt="Morral Urbano"></div>
           <span class="price-tag">$175.000</span>
         </div>
         <div class="card-body">
@@ -699,9 +742,9 @@
       <article class="card" data-name="Cinturón Clásico" data-price="$45.000" data-cats="hombres accesorios">
         <div class="card-media">
           <span class="cat-chip">Accesorio</span>
-          <div class="ph-art">
+          <div class="photo-slot"><div class="ph-art">
             <svg viewBox="0 0 100 100" fill="none"><rect x="16" y="44" width="68" height="12" rx="6" fill="#c9a24a" opacity=".2"/><circle cx="50" cy="50" r="9" stroke="#c9a24a" stroke-width="3"/></svg>
-          </div>
+          </div></div>
           <span class="price-tag">$45.000</span>
         </div>
         <div class="card-body">
@@ -714,7 +757,7 @@
       <article class="card" data-name="Maleta de Viaje Grande" data-price="$310.000" data-cats="maletas hombres mujeres">
         <div class="card-media">
           <span class="cat-chip">Maleta</span>
-          <img src="maleta-viaje-negra-beresh.png" alt="Maleta de Viaje Grande">
+          <div class="photo-slot"><img src="maleta-viaje-negra-beresh.png" alt="Maleta de Viaje Grande"></div>
           <span class="price-tag">$310.000</span>
         </div>
         <div class="card-body">
@@ -727,7 +770,7 @@
       <article class="card" data-name="Maleta de Cabina" data-price="$240.000" data-cats="maletas jovenes">
         <div class="card-media">
           <span class="cat-chip">Maleta</span>
-          <img src="maleta-cabina-rosa-beresh.png" alt="Maleta de Cabina">
+          <div class="photo-slot"><img src="maleta-cabina-rosa-beresh.png" alt="Maleta de Cabina"></div>
           <span class="price-tag">$240.000</span>
         </div>
         <div class="card-body">
@@ -740,7 +783,7 @@
       <article class="card" data-name="Maletín Ejecutivo" data-price="$195.000" data-cats="hombres maletas accesorios">
         <div class="card-media">
           <span class="cat-chip">Maleta</span>
-          <img src="bolso-cruzado-gris-fashion.png" alt="Maletín Ejecutivo">
+          <div class="photo-slot"><img src="bolso-cruzado-gris-fashion.png" alt="Maletín Ejecutivo"></div>
           <span class="price-tag">$195.000</span>
         </div>
         <div class="card-body">
@@ -753,7 +796,7 @@
       <article class="card" data-name="Morral Mujer Aurora" data-price="$165.000" data-cats="mujeres morrales">
         <div class="card-media">
           <span class="cat-chip">Morral</span>
-          <img src="morral-beige-nies.png" alt="Morral Mujer Aurora">
+          <div class="photo-slot"><img src="morral-beige-nies.png" alt="Morral Mujer Aurora"></div>
           <span class="price-tag">$165.000</span>
         </div>
         <div class="card-body">
@@ -766,7 +809,7 @@
       <article class="card" data-name="Bolso Cruzado Juvenil" data-price="$98.000" data-cats="jovenes mujeres bolsos">
         <div class="card-media">
           <span class="cat-chip">Bolso</span>
-          <img src="morral-rosa-nies.png" alt="Bolso Cruzado Juvenil">
+          <div class="photo-slot"><img src="morral-rosa-nies.png" alt="Bolso Cruzado Juvenil"></div>
           <span class="price-tag">$98.000</span>
         </div>
         <div class="card-body">
@@ -779,9 +822,9 @@
       <article class="card" data-name="Riñonera Urbana" data-price="$58.000" data-cats="jovenes hombres accesorios">
         <div class="card-media">
           <span class="cat-chip">Accesorio</span>
-          <div class="ph-art">
+          <div class="photo-slot"><div class="ph-art">
             <svg viewBox="0 0 100 100" fill="none"><path d="M20 50C20 40 35 34 50 34C65 34 80 40 80 50C80 60 65 66 50 66C35 66 20 60 20 50Z" fill="#c9a24a" opacity=".2"/><circle cx="50" cy="50" r="6" stroke="#c9a24a" stroke-width="3"/></svg>
-          </div>
+          </div></div>
           <span class="price-tag">$58.000</span>
         </div>
         <div class="card-body">
@@ -920,6 +963,125 @@
 
       emptyState.classList.toggle('show', visibleCount === 0);
     });
+  });
+  // Subir fotos desde la galería del dispositivo — se guardan en Cloudinary
+  // y se anotan en Firebase para que TODOS los visitantes vean la misma foto.
+  const CLOUDINARY_CLOUD_NAME = "ozesh0bu";
+  const CLOUDINARY_UPLOAD_PRESET = "Valmont";
+  const FIREBASE_DB_URL = "https://valmont-6711a-default-rtdb.firebaseio.com";
+
+  function slugify(text){
+    return text.toString().toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+  }
+
+  async function uploadToCloudinary(file){
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+    const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`, {
+      method: 'POST',
+      body: formData
+    });
+    const data = await res.json();
+    if(!res.ok) throw new Error((data.error && data.error.message) || 'No se pudo subir la imagen');
+    return data.secure_url;
+  }
+
+  async function savePhotoUrl(key, url){
+    await fetch(`${FIREBASE_DB_URL}/photos/${key}.json`, {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(url)
+    });
+  }
+
+  async function loadPhotoUrl(key){
+    const res = await fetch(`${FIREBASE_DB_URL}/photos/${key}.json`);
+    if(!res.ok) return null;
+    return res.json();
+  }
+
+  document.querySelectorAll('.card').forEach(card => {
+    const slot = card.querySelector('.photo-slot');
+    if(!slot) return;
+
+    const key = slugify(card.dataset.name);
+    const originalHTML = slot.innerHTML; // placeholder o foto original de fábrica
+
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.style.display = 'none';
+
+    const uploadBtn = document.createElement('button');
+    uploadBtn.type = 'button';
+    uploadBtn.className = 'photo-upload-btn';
+    const uploadBtnDefaultHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h3l2-3h6l2 3h3v11H4V8Z"/><circle cx="12" cy="13.5" r="3.5"/></svg>Subir foto`;
+    uploadBtn.innerHTML = uploadBtnDefaultHTML;
+
+    const removeBtn = document.createElement('button');
+    removeBtn.type = 'button';
+    removeBtn.className = 'photo-remove-btn';
+    removeBtn.title = 'Quitar foto subida';
+    removeBtn.innerHTML = '&times;';
+
+    slot.appendChild(uploadBtn);
+    slot.appendChild(removeBtn);
+    slot.appendChild(input);
+
+    function setImage(url){
+      let img = slot.querySelector('img');
+      const ph = slot.querySelector('.ph-art');
+      if(ph) ph.remove();
+      if(!img){
+        img = document.createElement('img');
+        slot.insertBefore(img, uploadBtn);
+      }
+      img.alt = card.dataset.name;
+      img.src = url;
+      slot.classList.add('has-custom');
+    }
+
+    uploadBtn.addEventListener('click', () => input.click());
+
+    input.addEventListener('change', () => {
+      const file = input.files[0];
+      if(!file) return;
+
+      uploadBtn.disabled = true;
+      uploadBtn.innerHTML = 'Subiendo...';
+
+      uploadToCloudinary(file)
+        .then(url => {
+          setImage(url);
+          return savePhotoUrl(key, url);
+        })
+        .catch(err => {
+          alert('No se pudo subir la foto. Intenta de nuevo.\n' + err.message);
+        })
+        .finally(() => {
+          uploadBtn.disabled = false;
+          uploadBtn.innerHTML = uploadBtnDefaultHTML;
+          input.value = '';
+        });
+    });
+
+    removeBtn.addEventListener('click', () => {
+      savePhotoUrl(key, null).catch(() => {});
+      slot.innerHTML = originalHTML;
+      slot.classList.remove('has-custom');
+      slot.appendChild(uploadBtn);
+      slot.appendChild(removeBtn);
+      slot.appendChild(input);
+    });
+
+    // Cargar la foto actual (guardada por cualquier persona, desde cualquier dispositivo)
+    loadPhotoUrl(key).then(url => {
+      if(url) setImage(url);
+    }).catch(() => {});
   });
 </script>
 
