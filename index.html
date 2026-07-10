@@ -14,9 +14,8 @@
      <script> al final del archivo y cámbialo por el tuyo,
      con indicativo de país y sin el "+" (ej: 573001234567).
 
-  2. Tus fotos de producto: los 4 productos Beresh ya tienen foto real
-     (sin fondo). Para los demás, cada uno tiene un recuadro con un
-     ícono como marcador de posición — reemplaza el bloque
+  2. Tus fotos de producto: cada bolso tiene un recuadro con un
+     ícono como marcador de posición. Reemplaza el bloque
      <div class="ph-art">...</div> por:
        <img src="ruta-de-tu-foto.jpg" alt="Nombre del producto">
      Sube tus fotos a la misma carpeta que este archivo.
@@ -365,8 +364,8 @@
   .card-media img{
     width:100%;
     height:100%;
-    object-fit:contain;
-    padding:20px;
+    object-fit:cover;
+    object-position:center;
   }
   .cat-chip{
     position:absolute;
@@ -630,65 +629,10 @@
            separadas por espacio: mujeres, hombres, jovenes, bolsos, morrales, maletas, accesorios.
            Copia y pega el bloque para agregar más. -->
 
-      <!-- Productos reales Beresh — revisa y ajusta precios/nombres/tallas a los reales -->
-      <article class="card" data-name="Bolso Beresh Tote Crema" data-price="$175.000" data-cats="mujeres bolsos">
-        <div class="card-media">
-          <span class="cat-chip">Bolso</span>
-          <img src="beresh-1-bolso-tote-crema.png" alt="Bolso Beresh tote crema con asa y correa">
-          <span class="price-tag">$175.000</span>
-        </div>
-        <div class="card-body">
-          <h3>Bolso Beresh Tote Crema</h3>
-          <p>Bolso estructurado en color crema, asa superior, herrajes dorados y correa cruzada desmontable.</p>
-          <a class="card-cta product-whatsapp" href="#">Pedir por WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="card" data-name="Billetera Beresh Crema" data-price="$85.000" data-cats="mujeres accesorios">
-        <div class="card-media">
-          <span class="cat-chip">Accesorio</span>
-          <img src="beresh-2-billetera-crema.png" alt="Billetera Beresh crema con detalle de corazón">
-          <span class="price-tag">$85.000</span>
-        </div>
-        <div class="card-body">
-          <h3>Billetera Beresh Crema</h3>
-          <p>Billetera tipo sobre en crema y beige, con detalle de corazón dorado y cierre a presión.</p>
-          <a class="card-cta product-whatsapp" href="#">Pedir por WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="card" data-name="Bolso Beresh Negro" data-price="$145.000" data-cats="mujeres bolsos">
-        <div class="card-media">
-          <span class="cat-chip">Bolso</span>
-          <img src="beresh-3-bolso-negro.png" alt="Bolso cruzado Beresh negro con cierre dorado">
-          <span class="price-tag">$145.000</span>
-        </div>
-        <div class="card-body">
-          <h3>Bolso Beresh Negro</h3>
-          <p>Bolso cruzado compacto en negro, textura pebble, cierre dorado y bolsillo frontal.</p>
-          <a class="card-cta product-whatsapp" href="#">Pedir por WhatsApp</a>
-        </div>
-      </article>
-
-      <article class="card" data-name="Bolso Beresh Blanco" data-price="$150.000" data-cats="mujeres jovenes bolsos">
-        <div class="card-media">
-          <span class="cat-chip">Bolso</span>
-          <img src="beresh-4-bolso-blanco.png" alt="Bolso cruzado Beresh blanco con correa ancha">
-          <span class="price-tag">$150.000</span>
-        </div>
-        <div class="card-body">
-          <h3>Bolso Beresh Blanco</h3>
-          <p>Bolso cruzado en blanco con correa ancha estampada y bolsillo frontal con cierre.</p>
-          <a class="card-cta product-whatsapp" href="#">Pedir por WhatsApp</a>
-        </div>
-      </article>
-
       <article class="card" data-name="Bolso Milán" data-price="$189.000" data-cats="mujeres bolsos">
         <div class="card-media">
           <span class="cat-chip">Bolso</span>
-          <div class="ph-art">
-            <svg viewBox="0 0 100 100" fill="none"><rect x="18" y="30" width="64" height="52" rx="6" fill="#c9a24a" opacity=".2"/><path d="M32 30C32 20 40 14 50 14C60 14 68 20 68 30" stroke="#c9a24a" stroke-width="3"/></svg>
-          </div>
+          <img src="bolso-clutch-negro-beresh.png" alt="Bolso Milán">
           <span class="price-tag">$189.000</span>
         </div>
         <div class="card-body">
@@ -701,9 +645,7 @@
       <article class="card" data-name="Morral Explorer" data-price="$155.000" data-cats="jovenes hombres morrales">
         <div class="card-media">
           <span class="cat-chip">Morral</span>
-          <div class="ph-art">
-            <svg viewBox="0 0 100 100" fill="none"><rect x="24" y="26" width="52" height="58" rx="10" fill="#c9a24a" opacity=".2"/><rect x="34" y="14" width="32" height="20" rx="6" stroke="#c9a24a" stroke-width="3"/></svg>
-          </div>
+          <img src="mochila-negra-beresh.png" alt="Morral Explorer">
           <span class="price-tag">$155.000</span>
         </div>
         <div class="card-body">
@@ -716,9 +658,7 @@
       <article class="card" data-name="Bolso Valentina" data-price="$220.000" data-cats="mujeres bolsos">
         <div class="card-media">
           <span class="cat-chip">Bolso</span>
-          <div class="ph-art">
-            <svg viewBox="0 0 100 100" fill="none"><rect x="18" y="34" width="64" height="46" rx="10" fill="#c9a24a" opacity=".2"/><path d="M30 34C30 24 38 16 50 16C62 16 70 24 70 34" stroke="#c9a24a" stroke-width="3"/></svg>
-          </div>
+          <img src="bolso-clutch-celeste-beresh.png" alt="Bolso Valentina">
           <span class="price-tag">$220.000</span>
         </div>
         <div class="card-body">
@@ -746,9 +686,7 @@
       <article class="card" data-name="Morral Urbano" data-price="$175.000" data-cats="jovenes morrales">
         <div class="card-media">
           <span class="cat-chip">Morral</span>
-          <div class="ph-art">
-            <svg viewBox="0 0 100 100" fill="none"><rect x="26" y="24" width="48" height="60" rx="10" fill="#c9a24a" opacity=".2"/><rect x="36" y="12" width="28" height="18" rx="6" stroke="#c9a24a" stroke-width="3"/></svg>
-          </div>
+          <img src="mochila-celeste-beresh.png" alt="Morral Urbano">
           <span class="price-tag">$175.000</span>
         </div>
         <div class="card-body">
@@ -776,9 +714,7 @@
       <article class="card" data-name="Maleta de Viaje Grande" data-price="$310.000" data-cats="maletas hombres mujeres">
         <div class="card-media">
           <span class="cat-chip">Maleta</span>
-          <div class="ph-art">
-            <svg viewBox="0 0 100 100" fill="none"><rect x="20" y="24" width="60" height="58" rx="8" fill="#c9a24a" opacity=".2"/><rect x="38" y="14" width="24" height="12" rx="4" stroke="#c9a24a" stroke-width="3"/><path d="M20 50H80" stroke="#c9a24a" stroke-width="2"/></svg>
-          </div>
+          <img src="maleta-viaje-negra-beresh.png" alt="Maleta de Viaje Grande">
           <span class="price-tag">$310.000</span>
         </div>
         <div class="card-body">
@@ -791,9 +727,7 @@
       <article class="card" data-name="Maleta de Cabina" data-price="$240.000" data-cats="maletas jovenes">
         <div class="card-media">
           <span class="cat-chip">Maleta</span>
-          <div class="ph-art">
-            <svg viewBox="0 0 100 100" fill="none"><rect x="26" y="28" width="48" height="52" rx="8" fill="#c9a24a" opacity=".2"/><rect x="40" y="18" width="20" height="10" rx="4" stroke="#c9a24a" stroke-width="3"/><path d="M26 50H74" stroke="#c9a24a" stroke-width="2"/></svg>
-          </div>
+          <img src="maleta-cabina-rosa-beresh.png" alt="Maleta de Cabina">
           <span class="price-tag">$240.000</span>
         </div>
         <div class="card-body">
@@ -806,9 +740,7 @@
       <article class="card" data-name="Maletín Ejecutivo" data-price="$195.000" data-cats="hombres maletas accesorios">
         <div class="card-media">
           <span class="cat-chip">Maleta</span>
-          <div class="ph-art">
-            <svg viewBox="0 0 100 100" fill="none"><rect x="20" y="36" width="60" height="40" rx="6" fill="#c9a24a" opacity=".2"/><path d="M42 36V28C42 24 45 22 50 22C55 22 58 24 58 28V36" stroke="#c9a24a" stroke-width="3"/></svg>
-          </div>
+          <img src="bolso-cruzado-gris-fashion.png" alt="Maletín Ejecutivo">
           <span class="price-tag">$195.000</span>
         </div>
         <div class="card-body">
@@ -821,9 +753,7 @@
       <article class="card" data-name="Morral Mujer Aurora" data-price="$165.000" data-cats="mujeres morrales">
         <div class="card-media">
           <span class="cat-chip">Morral</span>
-          <div class="ph-art">
-            <svg viewBox="0 0 100 100" fill="none"><rect x="28" y="28" width="44" height="54" rx="12" fill="#c9a24a" opacity=".2"/><rect x="38" y="16" width="24" height="16" rx="6" stroke="#c9a24a" stroke-width="3"/></svg>
-          </div>
+          <img src="morral-beige-nies.png" alt="Morral Mujer Aurora">
           <span class="price-tag">$165.000</span>
         </div>
         <div class="card-body">
@@ -836,9 +766,7 @@
       <article class="card" data-name="Bolso Cruzado Juvenil" data-price="$98.000" data-cats="jovenes mujeres bolsos">
         <div class="card-media">
           <span class="cat-chip">Bolso</span>
-          <div class="ph-art">
-            <svg viewBox="0 0 100 100" fill="none"><rect x="30" y="38" width="40" height="34" rx="8" fill="#c9a24a" opacity=".2"/><path d="M34 38C34 30 40 24 50 24C60 24 66 30 66 38" stroke="#c9a24a" stroke-width="3"/></svg>
-          </div>
+          <img src="morral-rosa-nies.png" alt="Bolso Cruzado Juvenil">
           <span class="price-tag">$98.000</span>
         </div>
         <div class="card-body">
